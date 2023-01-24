@@ -1,0 +1,72 @@
+    .root {
+        -fx-font-family: "Inter",sans-serif;
+        -fx-font-size: 20;
+    }
+
+    .button:hover {
+        -fx-cursor: hand;
+    }
+
+    .hbox{
+        -fx-padding: 15;
+        -fx-alignment: center;
+    }
+
+    #dateToday, #timeToday {
+        -fx-alignment: center;
+        -fx-text-fill: #337AB7;
+        -fx-font-weight: bold;
+        -fx-padding: 15;
+    }
+
+    .label {
+        -fx-font-size: 20;
+        -fx-font-weight: bold;
+        -fx-text-fill: #595959;
+    }
+
+    #mainText {
+        -fx-text-fill: linear-gradient( from 0% 0% to 100% 200%, repeat, #337AB7, #F79256);
+        -fx-font-weight: bold;
+    }
+
+    .languageButton, #dateButton, #timeButton {
+        -fx-background-color: #FBD1A2;
+        -fx-border-width: 4;
+        -fx-border-color: #eee;
+        -fx-text-fill: #595959;
+        -fx-font-weight: bold;
+    }
+
+    .languageButton:hover, #dateButton:hover, #timeButton:hover{
+        -fx-background-color: #F79256;
+        -fx-text-fill: #fff;
+    }
+
+    .languageButton:focused, #dateButton:focused, #timeButton:focused{
+        -fx-background-color: #F79256;
+        -fx-text-fill: #fff;
+    }
+
+    .weatherBottom {
+        -fx-border-color: #BFE2FF;
+        -fx-background-color: #337AB7;
+        -fx-text-fill: #fff;
+        -fx-font-weight: bold;
+    }
+
+    .weatherBottom:hover{
+        -fx-background-color: #4AAD52;
+        -fx-text-fill: #fff;
+        -fx-border-color: #BFE2FF;
+    }
+
+    .weatherBottom:focused {
+        -fx-text-fill: #fff;
+        -fx-background-color: #4AAD52;
+        -fx-border-color: #BFE2FF;
+    }
+
+    .hBoxTemperature {
+        -fx-text-fill: #595959;
+    }

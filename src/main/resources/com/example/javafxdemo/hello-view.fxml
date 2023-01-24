@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox stylesheets="@../style/style.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.javafxdemo.HelloController">
+
+    <HBox styleClass="hbox">
+        <Button fx:id="dateButton" onAction="#onDatetimeButtonClick" text="DATE" />
+        <Button fx:id="timeButton" onAction="#onDatetimeButtonClick" text="TIME" />
+        <Label fx:id="mainText" alignment="TOP_CENTER" maxWidth="700" text="WEATHER IN DNIPRO" HBox.hgrow="ALWAYS" />
+        <Button onAction="#onLanguageButtonClick" styleClass="languageButton" text="EN" />
+        <Button onAction="#onLanguageButtonClick" styleClass="languageButton" text="RU" />
+        <Button onAction="#onLanguageButtonClick" styleClass="languageButton" text="UA" />
+    </HBox>
+
+    <Separator prefWidth="200.0" />
+
+    <HBox styleClass="hbox">
+        <Label fx:id="dateTodayLabel" HBox.hgrow="ALWAYS" />
+        <Label fx:id="dateToday" HBox.hgrow="ALWAYS" />
+        <Label fx:id="timeTodayLabel" HBox.hgrow="ALWAYS" />
+        <Label fx:id="timeToday" HBox.hgrow="ALWAYS" />
+    </HBox>
+    <Separator prefWidth="200.0" />
+
+    <GridPane fx:id="grid" alignment="center" hgap="10" prefHeight="200" prefWidth="320" vgap="10">
+    </GridPane>
+    <Separator prefWidth="200.0" />
+    <HBox styleClass="hbox">
+        <Button onAction="#onWebsiteButtonClick" styleClass="weatherBottom" text="SINOPTIK" />
+        <Button onAction="#onWebsiteButtonClick" styleClass="weatherBottom" text="GISMETEO" />
+        <Button onAction="#onWebsiteButtonClick" styleClass="weatherBottom" text="METEO" />
+    </HBox>
+
+    <HBox styleClass="hbox">
+        <Button onAction="#onWebsiteButtonClick" styleClass="weatherBottom" text="POGODA" />
+        <Button onAction="#onWebsiteButtonClick" styleClass="weatherBottom" text="METEOBLUE" />
+    </HBox>
+
+</VBox>
