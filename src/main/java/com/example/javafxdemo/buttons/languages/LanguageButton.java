@@ -1,38 +1,31 @@
 package com.example.javafxdemo.buttons.languages;
 
-import com.example.javafxdemo.HelloController;
+import com.example.javafxdemo.Controller;
+import static com.example.javafxdemo.Controller.*;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 
-import static com.example.javafxdemo.HelloController.*;
-
 public class LanguageButton {
 
-    private final HelloController controller;
+    private final Controller controller;
 
-    public LanguageButton(HelloController controller) {
+    public LanguageButton(Controller controller) {
         this.controller = controller;
     }
 
-    protected void changeLanguageHeader( String locale, String dateButton,
-                                         String timeButton, String mainText ) {
+    protected void changeLanguageHeader( String locale, String timeButton, String mainText ) {
         language = locale;
-        controller.getDateButton().setText(  dateButton );
-        controller.getTimeButton().setText( timeButton );
+        controller.getDatetimeToggleButton().setText( timeButton );
         controller.getMainText().setText( mainText );
     }
 
-    protected void changeLanguageDatatimeLabel( String locale, String DateTodayLabel, String TimeTodayLabel ){
-        if ( isDateVisible ) {
+    protected void changeLanguageDataLabel(String locale ){
+        if ( isTimeVisible ) {
             String dateFormat = "EEEEE dd.MM.yyyy";
             SimpleDateFormat simpleDateFormat = new SimpleDateFormat(dateFormat, new Locale( locale, language.toUpperCase() ) );
-            controller.getDateTodayLabel().setText( DateTodayLabel );
-            controller.getDateToday().setText( simpleDateFormat.format( new Date() ).toUpperCase() );
-        }
-        if ( isTimeVisible ) {
-            controller.getTimeTodayLabel().setText( TimeTodayLabel );
+            controller.getDateText().setText( simpleDateFormat.format( new Date() ).toUpperCase() );
         }
     }
 }

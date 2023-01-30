@@ -1,0 +1,82 @@
+    .root {
+        -fx-background-image: url("images/sunset(w550).png");
+        -fx-background-repeat: repeat;
+        -fx-background-size: 700 520;
+        -fx-font-family: "Inter",sans-serif;
+        -fx-font-size: 20;
+        -orange: #FBC9AB;
+        -darker-orange: #FFAE88;
+        -blue: #7FBEEB;
+        -darker-blue: #5997BB;
+        -color-text: black;
+        -changing-text: -darker-blue;
+    }
+
+    .hBox{
+        -fx-padding: 15;
+        -fx-alignment: center;
+    }
+
+    #mainText {
+        -fx-text-fill: linear-gradient( to left, -darker-orange, -darker-blue  );
+        -fx-font-size: 30;
+    }
+
+    #dateText{
+        -fx-text-fill: -color-text;
+        -fx-alignment: center;
+        -fx-padding: 15;
+    }
+
+    #hBoxHyperlink{
+        -fx-padding: 5;
+    }
+
+    #websiteLink:hover {
+        -fx-text-fill: -orange;
+        -fx-font-weight: bold;
+        -fx-underline: true;
+    }
+
+    .label {
+        -fx-text-fill: black;
+        -fx-font-weight: bold;
+    }
+
+    /*----------------  BUTTONS ---------------*/
+
+    #datetimeToggleButton {
+        -fx-base: -orange;
+        -fx-text-fill: -color-text;
+    }
+
+    .combo-box {
+        -fx-base: -orange;
+    }
+
+    .combo-box .list-cell{
+        -fx-text-fill: -color-text;
+    }
+
+    .weatherToggleButton {
+        -fx-base: -blue;
+        -fx-text-fill: -color-text;
+    }
+
+    #datetimeToggleButton, .combo-box, .combo-box .list-cell, .weatherToggleButton{
+        -fx-cursor: hand;
+    }
+
+    /*----------------  CHANGING TEXT ---------------*/
+
+    #timeText {
+        -fx-text-fill: -changing-text;
+        -fx-effect: dropshadow( gaussian , white , 5 , 1 , 0.0 , 0.0 );
+    }
+
+    #websiteLink {
+        -fx-font-weight: bold;
+        -fx-underline: true;
+        -fx-text-fill: -changing-text;
+        -fx-effect: dropshadow( gaussian , white , 1 , 1 , 0.0 , 0.0 );
+    }

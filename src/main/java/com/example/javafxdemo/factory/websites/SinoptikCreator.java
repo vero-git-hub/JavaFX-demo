@@ -1,15 +1,14 @@
 package com.example.javafxdemo.factory.websites;
 
-import com.example.javafxdemo.HelloController;
+import com.example.javafxdemo.Controller;
 import com.example.javafxdemo.buttons.Button;
 import com.example.javafxdemo.buttons.websites.SinoptikButton;
-import com.example.javafxdemo.factory.Dialog;
+import com.example.javafxdemo.factory.Creator;
 
-public class SinoptikDialog extends Dialog {
+public class SinoptikCreator extends Creator {
+    Controller controller;
 
-    HelloController controller;
-
-    public SinoptikDialog(HelloController controller) {
+    public SinoptikCreator(Controller controller) {
         this.controller = controller;
     }
 

@@ -1,14 +1,14 @@
 package com.example.javafxdemo.factory.websites;
 
-import com.example.javafxdemo.HelloController;
+import com.example.javafxdemo.Controller;
 import com.example.javafxdemo.buttons.Button;
 import com.example.javafxdemo.buttons.websites.GismeteoButton;
-import com.example.javafxdemo.factory.Dialog;
+import com.example.javafxdemo.factory.Creator;
 
-public class GismeteoDialog extends Dialog {
-    HelloController controller;
+public class GismeteoCreator extends Creator {
+    Controller controller;
 
-    public GismeteoDialog(HelloController controller) {
+    public GismeteoCreator(Controller controller) {
         this.controller = controller;
     }
 

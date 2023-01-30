@@ -1,14 +1,14 @@
 package com.example.javafxdemo.factory.languages;
 
-import com.example.javafxdemo.HelloController;
+import com.example.javafxdemo.Controller;
 import com.example.javafxdemo.buttons.Button;
 import com.example.javafxdemo.buttons.languages.RuButton;
-import com.example.javafxdemo.factory.Dialog;
+import com.example.javafxdemo.factory.Creator;
 
-public class RuDialog extends Dialog {
-    HelloController controller;
+public class RuCreator extends Creator {
+    Controller controller;
 
-    public RuDialog(HelloController controller) {
+    public RuCreator(Controller controller) {
         this.controller = controller;
     }
 

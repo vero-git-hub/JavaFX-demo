@@ -1,41 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.collections.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox stylesheets="@../style/style.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.javafxdemo.HelloController">
-
-    <HBox styleClass="hbox">
-        <Button fx:id="dateButton" onAction="#onDatetimeButtonClick" text="DATE" />
-        <Button fx:id="timeButton" onAction="#onDatetimeButtonClick" text="TIME" />
+<VBox stylesheets="@../../../style.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.javafxdemo.Controller">
+    <HBox styleClass="hBox">
+      <ToggleButton fx:id="datetimeToggleButton" mnemonicParsing="false" onAction="#onDatetimeButtonClick" text="DATE AND TIME" focusTraversable="false" />
         <Label fx:id="mainText" alignment="TOP_CENTER" maxWidth="700" text="WEATHER IN DNIPRO" HBox.hgrow="ALWAYS" />
-        <Button onAction="#onLanguageButtonClick" styleClass="languageButton" text="EN" />
-        <Button onAction="#onLanguageButtonClick" styleClass="languageButton" text="RU" />
-        <Button onAction="#onLanguageButtonClick" styleClass="languageButton" text="UA" />
+        <ComboBox onAction="#onLanguageButtonClick" focusTraversable="false">
+            <items>
+                <FXCollections fx:factory="observableArrayList">
+                    <String fx:value="EN" />
+                    <String fx:value="RU" />
+                    <String fx:value="UA" />
+                </FXCollections>
+            </items>
+            <value>
+                <String fx:value="EN" />
+            </value>
+        </ComboBox>
     </HBox>
-
-    <Separator prefWidth="200.0" />
-
-    <HBox styleClass="hbox">
-        <Label fx:id="dateTodayLabel" HBox.hgrow="ALWAYS" />
-        <Label fx:id="dateToday" HBox.hgrow="ALWAYS" />
-        <Label fx:id="timeTodayLabel" HBox.hgrow="ALWAYS" />
-        <Label fx:id="timeToday" HBox.hgrow="ALWAYS" />
+    <HBox styleClass="hBox">
+        <Label fx:id="dateText" HBox.hgrow="ALWAYS" />
+        <Label fx:id="timeText" HBox.hgrow="ALWAYS" />
     </HBox>
-    <Separator prefWidth="200.0" />
-
-    <GridPane fx:id="grid" alignment="center" hgap="10" prefHeight="200" prefWidth="320" vgap="10">
+    <HBox fx:id="hBoxHyperlink" minHeight="50" styleClass="hBox">
+    </HBox>
+    <GridPane fx:id="grid" alignment="center" hgap="20" prefHeight="150" prefWidth="320" vgap="25">
     </GridPane>
-    <Separator prefWidth="200.0" />
-    <HBox styleClass="hbox">
-        <Button onAction="#onWebsiteButtonClick" styleClass="weatherBottom" text="SINOPTIK" />
-        <Button onAction="#onWebsiteButtonClick" styleClass="weatherBottom" text="GISMETEO" />
-        <Button onAction="#onWebsiteButtonClick" styleClass="weatherBottom" text="METEO" />
+    <HBox styleClass="hBox">
+      <ToggleButton focusTraversable="false" mnemonicParsing="false" onAction="#onWebsiteButtonClick" styleClass="weatherToggleButton" text="SINOPTIK" toggleGroup="$weatherToggleGroup">
+          <toggleGroup>
+              <ToggleGroup fx:id="weatherToggleGroup" />
+          </toggleGroup>
+      </ToggleButton>
+      <ToggleButton focusTraversable="false" mnemonicParsing="false" onAction="#onWebsiteButtonClick" styleClass="weatherToggleButton" text="GISMETEO" toggleGroup="$weatherToggleGroup" />
+      <ToggleButton focusTraversable="false" mnemonicParsing="false" onAction="#onWebsiteButtonClick" styleClass="weatherToggleButton" text="METEO" toggleGroup="$weatherToggleGroup" />
     </HBox>
-
-    <HBox styleClass="hbox">
-        <Button onAction="#onWebsiteButtonClick" styleClass="weatherBottom" text="POGODA" />
-        <Button onAction="#onWebsiteButtonClick" styleClass="weatherBottom" text="METEOBLUE" />
+    <HBox styleClass="hBox">
+      <ToggleButton focusTraversable="false" mnemonicParsing="false" onAction="#onWebsiteButtonClick" styleClass="weatherToggleButton" text="POGODA" toggleGroup="$weatherToggleGroup" />
+      <ToggleButton focusTraversable="false" mnemonicParsing="false" onAction="#onWebsiteButtonClick" styleClass="weatherToggleButton" text="METEOBLUE" toggleGroup="$weatherToggleGroup" />
     </HBox>
-
 </VBox>
